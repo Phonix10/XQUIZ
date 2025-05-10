@@ -7,25 +7,43 @@ public class Quiz{
     private List<Question> questions;
     private int finalScore;
 
-    // TODO: Implement Quiz class constructor : public Quiz(String quizName);
-        // Validate: If quizName is null or empty, 
-                // print “Quiz Name cannot be null or empty!”
-                // Note: The statement to be printed should be exactly same.
-        // else
-                // initialise the quizName with the string taken as input in this constructor
-                // initialise the questions to a new and empty arraylist
-                // initialise the finalScore to Zero
-        
+    // Constructor
+    public Quiz(String quizName) {
+        if(quizName == null || quizName.isEmpty()){
+            System.out.println("Quiz Name cannot be null or empty!");
+        }
+        else{
+            this.quizName = quizName;
+            questions = new ArrayList<Question>();
+            finalScore = 0;
+        }
 
-    //TODO: Create the getter method : public String getQuizName(), which returns the quizname
+    }
 
-    //TODO: Create the getter method :public List<Question> getQuestions(), which returns the questions list
 
-    //TODO: Create the getter method : public int getFinalScore(), which returns the final score
+    //getter 
+    public String getQuizName(){
+        return quizName;
+    }
 
-    //TODO: Create addQuestion() method:  public void addQuestion(Question question)
-        // Validate: If question is Null, print “Question cannot be null!”.
-         // If question is not null then add the question to list of questions
+    public List<Question> getQuestions(){
+        return questions;
+    }
+
+    public int getFinalScore(){
+        return finalScore;
+    }
+
+    //setter
+
+    public void addQuestion(Question question){
+        if(question == null){
+            System.out.println("Question cannot be null!");
+        }
+        else{
+            questions.add(question);
+        }
+    }
 
 
 
@@ -50,12 +68,12 @@ public class Quiz{
     
     public void revealAnswerKey(){
         // TODO: add loop for printing all the questions along with answers in the questions list.
+        for (int i = 0; i < questions.size(); i++)
         {
             System.out.println("Question no. " + (i+1) + " : " + questions.get(i).getQuestionText() +
                     "\nAnswer no. " + (i+1) + " : " + questions.get(i).getAnswer());
         }
     }
  
-
 }
 
