@@ -9,23 +9,6 @@ public class Question{
     protected String answer;
     protected List<String> choices;
 
-
-
-
-    // TODO: Create the Question class constructor 
-    // use the  signature :  public Question(String questionText, List<String> choices, String answer)
-    // Include the following validations
-
-        // Validate: If QuestionText is  null or empty
-                // Print "Question text cannot be null or empty!"
-        // Else If List of Choices is null or EmptyList,
-                //  print “Choices cannot be null or empty!”
-        // Else If answer is  null or Empty
-                // print “Answer cannot be null or empty!”
-        // Else If answer is not one of the choices in the List of choices by iterating over the list
-                // print “Answer is not present among the choices!”
-        // Else
-                // initialise all the defined variables using `this` keyword
             
                 
     // Note: The print statements should match exactly with the one specified above, since we have test cases designed on this
@@ -60,7 +43,21 @@ public class Question{
                         this.choices = choices;
                         this.answer = answer;
                 }
+        }
 
+
+        //getter
+        public String getAnswer(){
+                return answer;
+        }
+        public String getQuestionText(){
+                return questionText;
+        }
+        public List<String> getChoices(){
+                return choices;
+        }
+        public boolean checkAnswer(String useranswer){
+                return useranswer.equals(answer);
         }
 
 
